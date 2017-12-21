@@ -27,3 +27,5 @@ clear	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
+SMOOTHED_AVERAGE	LITERAL1
+SMOOTHED_EXPONENTIAL	LITERAL1
