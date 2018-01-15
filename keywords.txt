@@ -19,7 +19,6 @@ Smoothed	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-~Smoothed	KEYWORD2
 begin	KEYWORD2
 add	KEYWORD2
 get	KEYWORD2
