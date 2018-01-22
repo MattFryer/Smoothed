@@ -1,0 +1,5 @@
+# Windows thumb files
+Thumbs.db
+
+# Build packages
+*.zip
