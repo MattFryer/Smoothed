@@ -4,13 +4,12 @@
 #######################################
 
 #######################################
-# Datatypes & Namespaces (DATA_TYPE)
+# Datatypes (DATA_TYPE)
 #######################################
-
-Smoothed	DATA_TYPE
+# 3 tabs required to make it bold?
 
 #######################################
-# Classes (KEYWORD1)
+# Classes & Namespaces (KEYWORD1)
 #######################################
 
 Smoothed	KEYWORD1
