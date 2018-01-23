@@ -9,6 +9,7 @@
 An Arduino library to store and smooth sensor inputs using various methods including:
 * a simple moving average of the last x sensor readings
 *	a simple linear recursive exponential filter
+
 Unlike many other smoothing/filtering libraries, Smoothed uses a template class to ensure sensor readings in any numerical data type can be handled.
 
 ## How to Install
