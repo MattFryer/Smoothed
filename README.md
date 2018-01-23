@@ -1,3 +1,10 @@
+[![GitHub version](https://img.shields.io/github/release/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Smoothed/total.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/issues)
+[![GitHub license](https://img.shields.io/github/license/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/blob/master/LICENSE)
+
 # Smoothed
 An Arduino library to store and smooth sensor inputs using various methods including:
 * a simple moving average of the last x sensor readings
