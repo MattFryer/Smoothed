@@ -11,7 +11,7 @@
 
 #include <Smoothed.h> 	// Include the library
  
-#define SENSOR_PIN = A0;    // The input pin for the sensor. In this example we are reading from an Arduino analogue pin. 
+#define SENSOR_PIN A0    // The input pin for the sensor. In this example we are reading from an Arduino analogue pin. 
 // If you don't have a sensor you can still see the effect if the analogue pin is left floating its value will vary wildly.
 
 // Create two instances of the class to use. 
