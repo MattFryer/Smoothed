@@ -1,10 +1,10 @@
-[![GitHub version](https://img.shields.io/github/release/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
-[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
-[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Smoothed/total.svg)](https://github.com/MattFryer/Smoothed/releases/latest)
-[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/issues)
-[![Codacy grade](https://img.shields.io/codacy/grade/d19ea847574d443a8433655ee1d17843.svg)](https://www.codacy.com/app/MattFryer/Smoothed)
-[![GitHub license](https://img.shields.io/github/license/MattFryer/Smoothed.svg)](https://github.com/MattFryer/Smoothed/blob/master/LICENSE)
+[![GitHub version](https://img.shields.io/github/release/MattFryer/Smoothed.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/MattFryer/Smoothed.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub download](https://img.shields.io/github/downloads/MattFryer/Smoothed/total.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/releases/latest)
+[![GitHub stars](https://img.shields.io/github/stars/MattFryer/Smoothed.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/MattFryer/Smoothed.svg?logo=github&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/issues)
+[![Codacy grade](https://img.shields.io/codacy/grade/d19ea847574d443a8433655ee1d17843.svg?logo=codacy&logoColor=ffffff)](https://www.codacy.com/app/MattFryer/Smoothed)
+[![GitHub license](https://img.shields.io/github/license/MattFryer/Smoothed.svg?logo=gnu&logoColor=ffffff)](https://github.com/MattFryer/Smoothed/blob/master/LICENSE)
 
 # Smoothed
 An Arduino library to store and smooth sensor inputs using various methods including:
