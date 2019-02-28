@@ -9,8 +9,8 @@
 
 # Smoothed
 An Arduino library to store and smooth sensor inputs using various methods including:
-* a simple moving average of the last x sensor readings
-*	a simple linear recursive exponential filter
+*  a simple moving average of the last x sensor readings
+*	 a simple linear recursive exponential filter
 
 Unlike many other smoothing/filtering libraries, Smoothed uses a template class to ensure sensor readings in any numerical data type can be handled. This makes it both lightweight and flexible.
 
@@ -47,7 +47,7 @@ Serial.println(mySensor.get());
 ```
 
 ## Planned Improvements/Changes
-1. Add a multi-sample method. Calls a passed function to obtain the sensor value x times and averages out.
-2. Add a Savitzky Golay filter.
-3. Add a running median filter. Best method to eliminate random spikes in an otherwise stable signal. Need to work out how to handle different data types. Rounding maybe??
-4. Publishing to the Arduino IDE Library list.
+1.  Add a multi-sample method. Calls a passed function to obtain the sensor value x times and averages out.
+2.  Add a Savitzky Golay filter.
+3.  Add a running median filter. Best method to eliminate random spikes in an otherwise stable signal. Need to work out how to handle different data types. Rounding maybe??
+4.  Publishing to the Arduino IDE Library list.
