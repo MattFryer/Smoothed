@@ -22,7 +22,7 @@ A full example of using each smoothing method is provided with the library and c
 
 Firstly, you must include the library in your sketch:
 ```cpp
-#include <Smoothed.h> 
+#include <Smoothed.h>
 ```
 
 Next, create an instance of the class defining what data type to use. The example below uses a type of float:
@@ -33,7 +33,7 @@ You can replace float with any numeric data type to suit your sensor readings an
 
 Within the setup function, initialize the instance, defining the smoothing method and accuracy:
 ```cpp
-mySensor.begin(SMOOTHED_AVERAGE, 10);	
+mySensor.begin(SMOOTHED_AVERAGE, 10);
 ```
 In the above example we are using a simple average of the last 10 sensor readings.
 
