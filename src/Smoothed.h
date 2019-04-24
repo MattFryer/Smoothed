@@ -64,8 +64,9 @@ bool Smoothed<T>::begin (byte mode, byte smoothFactor) {
       
     case SMOOTHED_EXPONENTIAL : // SMOOTHED_EXPONENTIAL
 
-      smoothReading = new T[1];
+      smoothReading = new T[2];
       smoothReading[0] = 0;
+      smoothReading[1] = 0; // Second value in array used for storing last value added
       
       return true;  
       break;
@@ -102,8 +103,10 @@ bool Smoothed<T>::add (T newReading) {
         smoothReadingsNum++;
         smoothReading[0] = newReading;
       } else {
-        smoothReading[0] = ((T)smoothReadingsFactor/100) * newReading + (1 - ((T)smoothReadingsFactor/100)) * smoothReading[0];
+        smoothReading[0] = (T)(((long double)smoothReadingsFactor/100) * newReading + (1 - ((long double)smoothReadingsFactor/100)) * smoothReading[0]);
       }
+
+      smoothReading[1] = newReading; // Update the last value added
       
       return true;
       break;
@@ -130,7 +133,7 @@ T Smoothed<T>::get () {
       break;
 
     case SMOOTHED_EXPONENTIAL : // SMOOTHED_EXPONENTIAL
-      return smoothReading[0]; // Not sure why we have to return the first element of a single value array but we get a casting error if we don't
+      return smoothReading[0]; 
       break;
 
     default : 
@@ -152,8 +155,8 @@ T Smoothed<T>::getLast () {
       }
       break;
 
-    case 2 : // SMOOTHED_EXPONENTIAL
-      return false; 
+    case SMOOTHED_EXPONENTIAL : // SMOOTHED_EXPONENTIAL
+      return smoothReading[1]; 
       break;
 
     default : 
@@ -179,7 +182,8 @@ bool Smoothed<T>::clear () {
 
     case SMOOTHED_EXPONENTIAL : // SMOOTHED_EXPONENTIAL
       smoothReadingsNum = 0;
-	  smoothReading = 0;
+	  smoothReading[0] = 0;
+      smoothReading[1] = 0;
       break;
 
     default : 

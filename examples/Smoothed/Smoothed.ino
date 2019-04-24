@@ -48,22 +48,29 @@ void setup() {
 			
 	   The default parameters are SMOOTHED_EXPONENTIAL and 10.
 	*/
+
+    // Although it is unnecessary here, the stored values can be cleared if needed.
+    mySensor.clear();
 }
 
 void loop() {
-  // read the value from the sensor:
-  float currentSensorValue = analogRead(SENSOR_PIN);
-  
-  // Add the new value to both sensor value stores
-  mySensor.add(currentSensorValue);
-  mySensor2.add(currentSensorValue);   
-  
-  // Get the smoothed values
-  float smoothedSensorValueAvg = mySensor.get();
-  float smoothedSensorValueExp = mySensor2.get();	  
-  
-  // Output the smoothed values to the serial stream. Open the Arduino IDE Serial plotter to see the effects of the smoothing methods.
-  Serial.print(currentSensorValue); Serial.print("\t"); Serial.print(smoothedSensorValueAvg); Serial.print("\t"); Serial.println(smoothedSensorValueExp);
-  
-  delay(100);
+    // Read the value from the sensor
+    float currentSensorValue = analogRead(SENSOR_PIN);
+    
+    // Add the new value to both sensor value stores
+    mySensor.add(currentSensorValue);
+    mySensor2.add(currentSensorValue);   
+    
+    // Get the smoothed values
+    float smoothedSensorValueAvg = mySensor.get();
+    float smoothedSensorValueExp = mySensor2.get();	  
+    
+    // Output the smoothed values to the serial stream. Open the Arduino IDE Serial plotter to see the effects of the smoothing methods.
+    Serial.print(currentSensorValue); Serial.print("\t"); Serial.print(smoothedSensorValueAvg); Serial.print("\t"); Serial.println(smoothedSensorValueExp);
+    
+    // If needed we can also return the last stored value which will be unsmoothed
+    float lastValueStoredAvg = mySensor.getLast();
+    float lastValueStoredExp = mySensor2.getLast();	
+
+    delay(100);
 }
