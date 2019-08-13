@@ -148,7 +148,7 @@ T Smoothed<T>::getLast () {
   switch (smoothMode) {  
     case SMOOTHED_AVERAGE : // SMOOTHED_AVERAGE 
       // Just return the last reading
-      if (smoothReadingsPosition = 0) {
+      if (smoothReadingsPosition == 0) {
         return smoothReading[smoothReadingsFactor-1]; 
       } else {
         return smoothReading[smoothReadingsPosition-1];
