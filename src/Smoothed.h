@@ -10,8 +10,6 @@
 #define SMOOTHED_AVERAGE 1
 #define SMOOTHED_EXPONENTIAL 2
 
-using namespace std;
-
 // A class used to store and calculate the values to be smoothed.
 template <typename T>
 class Smoothed {
