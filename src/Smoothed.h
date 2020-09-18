@@ -121,12 +121,20 @@ T Smoothed<T>::get () {
   switch (smoothMode) {
     case SMOOTHED_AVERAGE : { // SMOOTHED_AVERAGE
       T runningTotal = 0;
-    
+      // calculating a `SUM(smoothReadings) / smoothReadingsNum` can lead to overflows.
+      T tmpRes = 0;
+      T remainder = 0;
       for (int x = 0; x < smoothReadingsNum; x++) {
-        runningTotal += smoothReading[x];
+        tmpRes = smoothReading[x] / smoothReadingsNum;
+        remainder += smoothReading[x] - tmpRes * smoothReadingsNum;
+        runningTotal += tmpRes;
+        if (remainder > smoothReadingsNum) {
+          tmpRes = remainder / smoothReadingsNum;
+          remainder -= tmpRes * smoothReadingsNum;
+          runningTotal += tmpRes;
+        }
       }
-      
-      return runningTotal / smoothReadingsNum;
+      return runningTotal;
     }
       break;
 
