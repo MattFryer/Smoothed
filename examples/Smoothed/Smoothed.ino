@@ -17,7 +17,6 @@
 // Create two instances of the class to use. 
 Smoothed <float> mySensor; 
 Smoothed <float> mySensor2;
-Smoothed <uint16_t> syntheticExample;
 
 /* We are using a template class that can be used with any numeric data type. 
    You can therefore replace <float> above with any other data type to suit your sensor readings and desired accuracy. 
@@ -50,8 +49,6 @@ void setup() {
 	   The default parameters are SMOOTHED_EXPONENTIAL and 10.
 	*/
 
-	syntheticExample.begin(SMOOTHED_AVERAGE, 10);
-
     // Although it is unnecessary here, the stored values can be cleared if needed.
     mySensor.clear();
 }
@@ -63,12 +60,10 @@ void loop() {
     // Add the new value to both sensor value stores
     mySensor.add(currentSensorValue);
     mySensor2.add(currentSensorValue);
-	syntheticExample.add(64000);
     
     // Get the smoothed values
     float smoothedSensorValueAvg = mySensor.get();
     float smoothedSensorValueExp = mySensor2.get();
-	uint16_t smoothedSyntheticExample = syntheticExample.get();
     
     // Output the smoothed values to the serial stream. Open the Arduino IDE Serial plotter to see the effects of the smoothing methods.
     Serial.print(currentSensorValue); Serial.print("\t"); Serial.print(smoothedSensorValueAvg); Serial.print("\t"); Serial.print(smoothedSensorValueExp); Serial.print("\t"); Serial.println(smoothedSyntheticExample);
