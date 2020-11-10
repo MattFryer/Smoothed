@@ -15,14 +15,14 @@ template <typename T>
 class Smoothed {
   private:
     byte smoothMode;
-    byte smoothReadingsFactor = 10; // The smoothing factor. In avergare mode, this is the number of readings to average. 
-    byte smoothReadingsPosition = 0; // Current position in the array
-    byte smoothReadingsNum = 0; // Number of readings currently being averaged
+    uint16_t smoothReadingsFactor = 10; // The smoothing factor. In average mode, this is the number of readings to average. 
+    uint16_t smoothReadingsPosition = 0; // Current position in the array
+    uint16_t smoothReadingsNum = 0; // Number of readings currently being averaged
     T *smoothReading; // Array of readings
   public:
     Smoothed();
     ~Smoothed(); // Destructor to clean up when class instance killed
-    bool begin (byte smoothMode, byte smoothFactor = 10);
+    bool begin (byte smoothMode, uint16_t smoothFactor = 10);
     bool add (T newReading);
     T get ();
     T getLast ();
@@ -43,7 +43,7 @@ Smoothed<T>::~Smoothed () { // Destructor
 
 // Inintialise the array for storing sensor values
 template <typename T>
-bool Smoothed<T>::begin (byte mode, byte smoothFactor) { 
+bool Smoothed<T>::begin (byte mode, uint16_t smoothFactor) { 
   smoothMode = mode;
   smoothReadingsFactor = smoothFactor; 
   
@@ -121,12 +121,20 @@ T Smoothed<T>::get () {
   switch (smoothMode) {
     case SMOOTHED_AVERAGE : { // SMOOTHED_AVERAGE
       T runningTotal = 0;
-    
+      // calculating a `SUM(smoothReadings) / smoothReadingsNum` can lead to overflows.
+      T tmpRes = 0;
+      T remainder = 0;
       for (int x = 0; x < smoothReadingsNum; x++) {
-        runningTotal += smoothReading[x];
+        tmpRes = smoothReading[x] / smoothReadingsNum;
+        remainder += smoothReading[x] - tmpRes * smoothReadingsNum;
+        runningTotal += tmpRes;
+        if (remainder > smoothReadingsNum) {
+          tmpRes = remainder / smoothReadingsNum;
+          remainder -= tmpRes * smoothReadingsNum;
+          runningTotal += tmpRes;
+        }
       }
-      
-      return runningTotal / smoothReadingsNum;
+      return runningTotal;
     }
       break;
 
