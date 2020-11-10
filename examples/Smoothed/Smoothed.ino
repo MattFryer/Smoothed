@@ -66,7 +66,7 @@ void loop() {
     float smoothedSensorValueExp = mySensor2.get();
     
     // Output the smoothed values to the serial stream. Open the Arduino IDE Serial plotter to see the effects of the smoothing methods.
-    Serial.print(currentSensorValue); Serial.print("\t"); Serial.print(smoothedSensorValueAvg); Serial.print("\t"); Serial.print(smoothedSensorValueExp); Serial.print("\t"); Serial.println(smoothedSyntheticExample);
+    Serial.print(currentSensorValue); Serial.print("\t"); Serial.print(smoothedSensorValueAvg); Serial.print("\t"); Serial.println(smoothedSensorValueExp);
 	
     
     // If needed we can also return the last stored value which will be unsmoothed
