@@ -195,5 +195,6 @@ bool Smoothed<T>::clear () {
     default : 
       return false;
       break;
-  }         
+  }
+  return false;
 }
