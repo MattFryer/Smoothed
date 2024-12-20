@@ -101,7 +101,7 @@ bool Smoothed<T>::add (T newReading) {
         smoothReadingsNum++;
         smoothReading[0] = newReading;
       } else {
-        smoothReading[0] = (T)(((long double)smoothReadingsFactor/100) * newReading + (1 - ((long double)smoothReadingsFactor/100)) * smoothReading[0]);
+        smoothReading[0] = (T)(((long double)1/smoothReadingsFactor) * newReading + (1 - ((long double)1/smoothReadingsFactor)) * smoothReading[0]);
       }
 
       smoothReading[1] = newReading; // Update the last value added
