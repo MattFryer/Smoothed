@@ -14,7 +14,7 @@
 template <typename T>
 class Smoothed {
   private:
-    byte smoothMode;
+    byte smoothMode = SMOOTHED_EXPONENTIAL;
     uint16_t smoothReadingsFactor = 10; // The smoothing factor. In average mode, this is the number of readings to average. 
     uint16_t smoothReadingsPosition = 0; // Current position in the array
     uint16_t smoothReadingsNum = 0; // Number of readings currently being averaged
@@ -22,7 +22,7 @@ class Smoothed {
   public:
     Smoothed();
     ~Smoothed(); // Destructor to clean up when class instance killed
-    bool begin (byte smoothMode, uint16_t smoothFactor = 10);
+    bool begin (byte smoothMode = SMOOTHED_EXPONENTIAL, uint16_t smoothFactor = 10);
     bool add (T newReading);
     T get ();
     T getLast ();
