@@ -184,12 +184,15 @@ bool Smoothed<T>::clear () {
       for (int thisReading = 0; thisReading < smoothReadingsNum; thisReading++) {
         smoothReading[thisReading] = 0;
       }
+      
+      return true;
       break;
 
     case SMOOTHED_EXPONENTIAL : // SMOOTHED_EXPONENTIAL
       smoothReadingsNum = 0;
 	  smoothReading[0] = 0;
       smoothReading[1] = 0;
+      return true;
       break;
 
     default : 
